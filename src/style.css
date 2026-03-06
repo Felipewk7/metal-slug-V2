@@ -1,0 +1,140 @@
+:root {
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #9d00ff;
+    --dark-bg: #050505;
+    --glass-bg: rgba(0, 0, 0, 0.7);
+    --font-main: 'Outfit', sans-serif;
+    --font-pixel: 'Press Start 2P', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: var(--font-main);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    width: 90vw;
+    height: 90vh;
+    max-width: 1024px;
+    max-height: 768px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--neon-purple);
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
+    background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+    position: relative;
+}
+
+.ui-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--glass-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.label {
+    font-family: var(--font-pixel);
+    font-size: 0.6rem;
+    color: var(--neon-blue);
+    margin-right: 0.5rem;
+}
+
+#score,
+#weapon-name {
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.health-bar-wrapper {
+    width: 200px;
+    height: 10px;
+    background: #111;
+    border: 1px solid var(--neon-pink);
+    position: relative;
+}
+
+#health-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+    box-shadow: 0 0 10px var(--neon-pink);
+    transition: width 0.3s ease-out;
+}
+
+#game-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-family: var(--font-pixel);
+    color: var(--neon-pink);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px var(--neon-pink);
+}
+
+button {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 1rem 2rem;
+    font-family: var(--font-pixel);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.ui-footer {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: var(--glass-bg);
+}
